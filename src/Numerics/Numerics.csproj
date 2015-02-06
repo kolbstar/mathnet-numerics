@@ -210,6 +210,14 @@
     <Compile Include="SpecialFunctions\Logistic.cs" />
     <Compile Include="SpecialFunctions\TestFunctions.cs" />
     <Compile Include="Statistics\ArrayStatistics.cs" />
+    <Compile Include="Statistics\KalmanFilter\IKalmanModel.cs" />
+    <Compile Include="Statistics\KalmanFilter\Implementations\ExtendedKalmanData.cs" />
+    <Compile Include="Statistics\KalmanFilter\Implementations\ExtendedKalmanModel.cs" />
+    <Compile Include="Statistics\KalmanFilter\Implementations\KalmanModel.cs" />
+    <Compile Include="Statistics\KalmanFilter\Implementations\LinearObservationData.cs" />
+    <Compile Include="Statistics\KalmanFilter\KalmanFilter.cs" />
+    <Compile Include="Statistics\KalmanFilter\KalmanObservationData.cs" />
+    <Compile Include="Statistics\KalmanFilter\KalmanState.cs" />
     <Compile Include="Statistics\RunningStatistics.cs" />
     <Compile Include="Statistics\QuantileDefinition.cs" />
     <Compile Include="Statistics\RankDefinition.cs" />
@@ -445,5 +453,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
