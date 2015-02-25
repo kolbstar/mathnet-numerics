@@ -40,7 +40,7 @@ namespace MathNet.Numerics.Statistics.KalmanFilter
             var h_gradient = observation.StateTransformGradient(x_apriori);
             var s = h_gradient * x_apriori.Covariance * h_gradient.Transpose() + observation.ObservationError;
 
-            var k_gain = x_apriori.Covariance * h_gradient.Transpose() * s.Cholesky().Solve(Matrix<T>.Build.DenseIdentity(s.RowCount));
+            var k_gain = s.Cholesky().Solve(h_gradient * x_apriori.Covariance.Transpose()).Transpose();
             k_state.State = x_apriori.State + k_gain * y;
             k_state.Covariance = (Matrix<T>.Build.DenseIdentity(k_state.State.Count) - k_gain * h_gradient) * x_apriori.Covariance;
 
